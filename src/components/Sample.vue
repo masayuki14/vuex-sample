@@ -29,7 +29,8 @@ export default {
 
   methods: {
     update() {
-      this.$store.state.msg = this.newMsg;
+      // this.$store.state.msg = this.newMsg;
+      this.$store.commit('updateMsg', this.newMsg);
     },
   },
 };
