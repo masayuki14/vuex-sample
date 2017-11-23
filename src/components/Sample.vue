@@ -9,8 +9,14 @@ export default {
   name: 'sample',
   data() {
     return {
-      msg: 'Welcome to My Vuex Sample.',
+      // msg: 'Welcome to My Vuex Sample.',
     };
+  },
+
+  computed: {
+    msg() {
+      return this.$store.state.msg;
+    },
   },
 };
 </script>
