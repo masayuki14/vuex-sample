@@ -4,18 +4,18 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import App from './App';
 import router from './router';
+import * as types from './store/mutation-types';
 
 Vue.config.productionTip = false;
 Vue.use(Vuex);
 
-const UPDATE_MESSAGE = 'UPDATE_MESSAGE';
 
 const store = new Vuex.Store({
   state: {
     msg: 'Hello Vuex Store.',
   },
   mutations: {
-    [UPDATE_MESSAGE](state, newMsg) {
+    [types.UPDATE_MESSAGE](state, newMsg) {
       state.msg = newMsg;
     },
   },
