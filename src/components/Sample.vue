@@ -5,18 +5,19 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'sample',
   data() {
     return {
-      // msg: 'Welcome to My Vuex Sample.',
     };
   },
 
   computed: {
-    msg() {
-      return this.$store.state.msg;
-    },
+    ...mapState({
+      msg: state => state.msg,
+    }),
   },
 };
 </script>
