@@ -1,7 +1,9 @@
 <template>
   <div class="sample">
     <h1>{{ msg }}</h1>
-    length: {{ msgLength }}
+    length: {{ msgLength }}<br>
+    <input type="text" v-model="newMsg" />
+    <button @click="update">更新</button>
   </div>
 </template>
 
@@ -12,6 +14,7 @@ export default {
   name: 'sample',
   data() {
     return {
+      newMsg: null,
     };
   },
 
@@ -22,6 +25,12 @@ export default {
     ...mapState({
       msg: state => state.msg,
     }),
+  },
+
+  methods: {
+    update() {
+      this.$store.state.msg = this.newMsg;
+    },
   },
 };
 </script>
