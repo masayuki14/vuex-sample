@@ -8,12 +8,14 @@ import router from './router';
 Vue.config.productionTip = false;
 Vue.use(Vuex);
 
+const UPDATE_MESSAGE = 'UPDATE_MESSAGE';
+
 const store = new Vuex.Store({
   state: {
     msg: 'Hello Vuex Store.',
   },
   mutations: {
-    updateMsg(state, newMsg) {
+    [UPDATE_MESSAGE](state, newMsg) {
       state.msg = newMsg;
     },
   },
