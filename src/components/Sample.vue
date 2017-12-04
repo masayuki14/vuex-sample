@@ -4,6 +4,7 @@
     length: {{ msgLength }}<br>
     <input type="text" v-model="newMsg" />
     <button @click="update">更新</button>
+    <button @click="repeat">繰り返す</button>
   </div>
 </template>
 
@@ -31,6 +32,9 @@ export default {
   methods: {
     update() {
       this.$store.commit(types.UPDATE_MESSAGE, this.newMsg);
+    },
+    repeat() {
+      this.$store.dispatch('repeat');
     },
   },
 };
