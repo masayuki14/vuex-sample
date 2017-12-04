@@ -19,6 +19,12 @@ const store = new Vuex.Store({
       state.msg = newMsg;
     },
   },
+  actions: {
+    repeat(context) {
+      let msg = context.state.msg
+      context.commit(types.UPDATE_MESSAGE, `${msg} ${msg}`)
+    },
+  }
 });
 
 /* eslint-disable no-new */
