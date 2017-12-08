@@ -9,14 +9,14 @@ const state = {
 };
 
 const mutations = {
-  [types.UPDATE_MESSAGE](state, newMsg) {
-    state.msg = newMsg;
+  [types.UPDATE_MESSAGE](_state, newMsg) {
+    _state.msg = newMsg;
   },
 };
 
 const actions = {
   repeat(context) {
-    let msg = context.state.msg;
+    const msg = context.state.msg;
     context.commit(types.UPDATE_MESSAGE, `${msg} ${msg}`);
   },
 };
